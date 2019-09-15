@@ -132,10 +132,3 @@ def sum(lst1, lst2):
         sum_list.pushhead(flag)
     return sum_list
 
-
-
-if __name__ == "__main__":
-
-    L =   num_to_list(1)
-    L2 = num_to_list(9999)
-    print(sum(L, L2))
