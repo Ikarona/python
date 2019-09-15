@@ -96,11 +96,3 @@ def num_to_list(number): #head - beginning
     return num_list
 
 
-
-if __name__ == "__main__":
-
-    L = num_to_list(1234)
-    print(L.len())
-
-    L.find(1)
-    print(L.len())
