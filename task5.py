@@ -1,3 +1,6 @@
+'''
+using copy-pasted alg of Dijkstra
+'''
 class Graph:
     def __init__(self, gr):
         self.my_graph_list = []
@@ -13,29 +16,29 @@ class Graph:
             self.matrix[gr[x][0] - 1][gr[x][1] - 1] = gr[x][2]
             self.matrix[gr[x][1] - 1][gr[x][0] - 1] = gr[x][2]
 
-    def Dijkstra(self, S, N):
-        valid = [True]*N
-        weight = [1000000]*N
-        weight[S] = 0
-        for i in range(N):
-            min_weight = 1000001
-            ID_min_weight = -1
+    def Dijkstra(self, START, NUMB):
+        valid = [True]*NUMB
+        weight = [1000000]*NUMB
+        weight[START] = 0
+        for i in range(NUMB):
+            MIN_WEIGHT = 1000001
+            ID_MIN_WEIGHT = -1
             for i in range(len(weight)):
-                if valid[i] and weight[i] < min_weight:
-                    min_weight = weight[i]
-                    ID_min_weight = i
+                if valid[i] and weight[i] < MIN_WEIGHT:
+                    MIN_WEIGHT = weight[i]
+                    ID_MIN_WEIGHT = i
             for i in range(len(self.my_graph_list)):
-                if weight[ID_min_weight] + self.matrix[ID_min_weight][i] < weight[i]:
-                    weight[i] = weight[ID_min_weight] + self.matrix[ID_min_weight][i]
-            valid[ID_min_weight] = False
+                if weight[ID_MIN_WEIGHT] + self.matrix[ID_MIN_WEIGHT][i] < weight[i]:
+                    weight[i] = weight[ID_MIN_WEIGHT] + self.matrix[ID_MIN_WEIGHT][i]
+            valid[ID_MIN_WEIGHT] = False
         weight.sort(reverse = True)
         if weight[0] > 10000:
             print(-1)
         else:
             print(weight[0])
 
-times = eval(input("times = "))
-N = eval(input("N = "))
-X = eval(input("X = "))
-n = Graph(times)
-n.Dijkstra(X, N)
+TIMES = eval(input("times = "))
+NUM = eval(input("N = "))
+XXX = eval(input("X = "))
+GRA = Graph(TIMES)
+GRA.Dijkstra(XXX, NUM)
