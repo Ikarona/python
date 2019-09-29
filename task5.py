@@ -19,7 +19,7 @@ class Graph:
     def Dijkstra(self, START, NUMB):
         valid = [True]*NUMB
         weight = [1000000]*NUMB
-        weight[START] = 0
+        weight[START - 1] = 0
         for i in range(NUMB):
             MIN_WEIGHT = 1000001
             ID_MIN_WEIGHT = -1
